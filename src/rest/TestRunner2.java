@@ -18,8 +18,9 @@ public class TestRunner2 {
 	@Test
 	public static void test() throws XmlException, IOException, SoapUIException {
 
-//		WsdlProject wsdlProj = new WsdlProject("C:/Users/karth/Downloads/LibraryAPI.xml");
-		WsdlProject wsdlProj = new WsdlProject("C:/Users/karth/Downloads/reqres-soapui-project.xml");
+//		String filePath = System.getProperty("user.dir")+"/soapUIXMLs/LibraryAPI.xml";
+		String filePath = System.getProperty("user.dir")+"/soapUIXMLs/reqres.xml";
+		WsdlProject wsdlProj = new WsdlProject(filePath);
 
 		for (int j = 0; j < wsdlProj.getTestSuiteCount(); j++) {
 			WsdlTestSuite testSuite = wsdlProj.getTestSuiteAt(j);

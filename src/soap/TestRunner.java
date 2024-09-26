@@ -17,8 +17,8 @@ import com.eviware.soapui.support.SoapUIException;
 public class TestRunner {
 	@Test
 	public static void test() throws XmlException, IOException, SoapUIException {
-		
-		WsdlProject wsdlProj = new WsdlProject("C:\\Users\\karth\\Downloads\\Employee.xml");
+		String filePath = System.getProperty("user.dir")+"/soapUIXMLs/Employee.xml";
+		WsdlProject wsdlProj = new WsdlProject(filePath);
 		WsdlTestSuite testSuite = wsdlProj.getTestSuiteByName("Testing");
 		for(int i=0;i<testSuite.getTestCaseCount();i++) {
 			WsdlTestCase testCase = testSuite.getTestCaseAt(i);
